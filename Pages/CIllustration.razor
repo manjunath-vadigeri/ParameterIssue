@@ -1,0 +1,79 @@
+﻿@using CG.UI.ViewModels;
+@using Syncfusion.Blazor.RichTextEditor
+@using Microsoft.JSInterop
+
+@inject IJSRuntime JSRuntime
+
+<link href="css/app.css" rel="stylesheet" />
+
+<div id="Editor" >
+    <SfRichTextEditor Readonly=true Value=@RichTextContent>
+        <RichTextEditorToolbarSettings Enable=false></RichTextEditorToolbarSettings>
+    </SfRichTextEditor>
+</div>
+
+
+
+@code {
+    
+    [Parameter]
+    public string RichTextContent { get; set; }
+
+    public string Content = @"<p>Really Long Text.</p>
+<p>Really Long Text 1.</p>
+<p>Really Long Text.</p>
+<p>Really Long Text.</p>
+<p>Really Long Text.</p>
+<p>Really Long Text 5.</p>
+<p>Really Long Text.</p>
+<p>Really Long Text.</p>
+<p>Really Long Text.</p>
+<p>Really Long Text.</p>
+<p>Really Long Text 10.</p>
+<p>Really Long Text.</p>
+<p>Really Long Text.</p>
+<p>Really Long Text.</p>
+<p>Really Long Text.</p>
+<p>Really Long Text 15.</p>
+<p>Really Long Text.</p>
+<p>Really Long Text.</p>
+<p>Really Long Text.</p>
+<p>Really Long Text.</p>
+<p>Really Long Text.</p>
+<p>Really Long Text 21.</p>
+<p>Really Long Text.</p>
+<p>Really Long Text.</p>
+<p>Really Long Text.</p>
+<p>Really Long Text.</p>
+<p>Really Long Text.</p>
+<p>Really Long Text 25.</p>
+<p>Really Long Text.</p>
+<p>Really Long Text.</p>
+<p>Really Long Text.</p>
+<p>Really Long Text.</p>
+<p>Really Long Text.</p>
+<p>Really Long Text 30.</p>
+<p>Really Long Text.</p>
+<p>Really Long Text.</p>
+<p>Really Long Text.</p>
+<p>Really Long Text.</p>
+<p>Really Long Text.</p>
+<p>Really Long Text.</p>
+<p>Really Long Text.</p>
+<p>Really Long Text.</p>
+<p>Really Long Text.</p>
+<p>Really Long Text.</p>
+<p>Really Long Text.</p>
+<p>Really Long Text.</p>
+<p>Really Long Text.</p>
+<p>Really Long Text.</p>
+<p>Really Long Text.</p>
+<p>Really Long Text.</p>
+<p>Really Long Text.</p>
+<p>Really Long Text.</p>
+<p>Really Long Text.</p>
+<p>Really Long Text.</p>
+<p>Really Long Text.</p>
+<p>Really Long Text.</p>
+";
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:view="clr-namespace:CG.UI.Views"
+             x:Class="CG.UI.Pages.HomePage">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="5">
+            <view:AppHeader />
+            <HorizontalStackLayout BackgroundColor="{StaticResource Secondary}" Padding="10">
+                <Label Text="Explore Services" Style="{StaticResource ContrastLabel}"/>
+            </HorizontalStackLayout>
+
+            <VerticalStackLayout HorizontalOptions="CenterAndExpand">
+
+                <FlexLayout Direction="Row" Wrap="Wrap" >
+                    <view:Tile Text="C Illustration" ImageSource="c_illustration.svg" Clicked="OnCIllustrationClicked"/>
+                </FlexLayout>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CG.UI.Views.CustomWebView"
+             x:Name="this">
+
+    <WebView Grid.Row="2" Navigating="OnNavigating" HeightRequest="200" WidthRequest="200">
+        <WebView.Source>
+            <HtmlWebViewSource Html="{Binding Text, Source={x:Reference this}}" />
+        </WebView.Source>
+    </WebView>
+
+</ContentView>

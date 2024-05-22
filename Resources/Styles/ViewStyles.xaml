@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:view="clr-namespace:CG.UI.Views">
+
+    <Style TargetType="view:CustomImage" >
+        <Setter Property="TintColor" Value="{StaticResource IconColor2}" />
+    </Style>
+
+    <Style x:Key="FormImageSmall" TargetType="view:CustomImage" >
+        <Setter Property="HeightRequest" Value="30" />
+    </Style>
+
+    <Style x:Key="FormImageLarge" TargetType="view:CustomImage" >
+        <Setter Property="HeightRequest" Value="100" />
+    </Style>
+
+    <Style TargetType="view:CustomImageButton" >
+        <Setter Property="TintColor" Value="{StaticResource IconColor2}" />
+    </Style>
+
+    <Style x:Key="Back" TargetType="view:CustomImageButton" >
+        <Setter Property="Source" Value="back.svg" />
+        <Setter Property="HeightRequest" Value="25" />
+        <Setter Property="WidthRequest" Value="25" />
+        <Setter Property="HorizontalOptions" Value="Start" />
+    </Style>
+
+</ResourceDictionary>

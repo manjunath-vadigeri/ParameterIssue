@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:dataForm="clr-namespace:Syncfusion.Maui.DataForm;assembly=Syncfusion.Maui.DataForm"
+    xmlns:tabView="clr-namespace:Syncfusion.Maui.TabView;assembly=Syncfusion.Maui.TabView"
+    xmlns:dataGrid="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid">
+
+    <Style TargetType="dataForm:SfDataForm">
+        <Setter Property="LayoutType" Value="TextInputLayout"/>
+        <!--<Setter Property="HeightRequest" Value="300"/>-->
+        <Setter Property="LabelTextStyle">
+            <Setter.Value>
+                <dataForm:DataFormTextStyle TextColor="{StaticResource SecondaryTextColor}"
+                                            FontFamily="RobotoRegular"
+                                            FontSize="14"/>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ErrorLabelTextStyle">
+            <Setter.Value>
+                <dataForm:DataFormTextStyle TextColor="{StaticResource ErrorTextColor}" 
+                                            FontFamily="RobotoRegular"
+                                            FontSize="14"/>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="TextInputLayoutSettings">
+            <Setter.Value>
+                <dataForm:TextInputLayoutSettings
+                    Stroke="{StaticResource BorderColor1}"
+                    FocusedStroke="{StaticResource BorderColor1}"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="tabView:SfTabView">
+        <Setter Property="Background" Value="{StaticResource Secondary}"/>
+        <Setter Property="TabBarBackground" Value="{StaticResource TabViewTabBackgroundColor}"/>
+        <Setter Property="IndicatorBackground" Value="{StaticResource TabViewIndicatorBackground}"/>
+        <Setter Property="TabBarPlacement" Value="Top"/>
+    </Style>
+
+    <Style TargetType="tabView:SfTabItem">
+        <Setter Property="Padding" Value="10"/>
+    </Style>
+
+    <!--Style for DataGrid-->
+    <Style TargetType="dataGrid:SfDataGrid">
+        <Setter Property="HeaderGridLinesVisibility" Value="Both"/>
+        <Setter Property="GridLinesVisibility" Value="Both"/>
+        <Setter Property="AutoGenerateColumnsMode" Value="None"/>
+        <Setter Property="ColumnWidthMode" Value="Fill"/>
+    </Style>
+
+    <Style TargetType="dataGrid:DataGridHeaderCell">
+        <Setter Property="TextAlignment" Value="Start"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+    </Style>
+
+</ResourceDictionary>

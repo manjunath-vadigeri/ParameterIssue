@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="CG.UI.Views.Tile"
+             xmlns:view="clr-namespace:CG.UI.Views"
+             x:DataType="view:Tile"
+             x:Name="this">
+
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <toolkit:IsStringNotNullOrEmptyConverter x:Key="IsStringNotNullOrEmptyConverter" />
+            
+            <Style TargetType="ImageButton">
+                <!--<Setter Property="WidthRequest" Value="{Binding IconWidth, Source={x:Reference this}}"/>
+                <Setter Property="HeightRequest" Value="{Binding IconHeight, Source={x:Reference this}}"/>-->
+                <Setter Property="Background" Value="{StaticResource Secondary}"/>
+                <Setter Property="Padding" Value="0,2"/>
+            </Style>
+
+            <Style TargetType="view:Tile">
+                <!--<Setter Property="IconHeight" Value="65"/>-->
+                <!--<Setter Property="IconWidth" Value="100"/>-->
+                <Setter Property="HeightRequest" Value="120" />
+                <Setter Property="WidthRequest" Value="100" />
+                <Setter Property="Margin" Value="8"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentView.Resources>
+
+    <Frame>
+        <Grid BindingContext="{x:Reference this}" 
+              HeightRequest="{Binding HeightRequest, Source={x:Reference this}}" 
+              WidthRequest="{Binding WidthRequest, Source={x:Reference this}}" 
+              HorizontalOptions="Center"
+              Background="{StaticResource Secondary}"
+              Padding="0,0,0,5"
+              RowDefinitions="*,auto,auto">
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnSelected"/>
+            </Grid.GestureRecognizers>
+
+            <ImageButton Grid.Row="0" Source="{Binding ImageSource}" Clicked="OnSelected" >
+                <ImageButton.Behaviors>
+                    <!--<toolkit:IconTintColorBehavior TintColor="{StaticResource IconColor2}" />-->
+                </ImageButton.Behaviors>
+            </ImageButton>
+
+            <Label Grid.Row="1" Text="{Binding Text}" LineBreakMode="WordWrap" MaxLines="2" Style="{StaticResource ContrastLabel}"
+               HorizontalOptions="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Padding="2,0" />
+
+            <Label Grid.Row="2" Text="{Binding Count}" MaxLines="1" Style="{StaticResource ContrastLabel}"
+                   HorizontalOptions="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Padding="2,0"
+                   IsVisible="{Binding Count, Converter={StaticResource IsStringNotNullOrEmptyConverter}}"/>
+        </Grid>
+    </Frame>
+
+</ContentView>

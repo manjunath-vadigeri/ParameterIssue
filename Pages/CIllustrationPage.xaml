@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="CG.UI.Pages.CIllustrationPage"
+             xmlns:page="clr-namespace:CG.UI.Views"
+             xmlns:view="clr-namespace:CG.UI.Pages"
+             xmlns:viewModel="clr-namespace:CG.UI.ViewModels"
+             xmlns:model="clr-namespace:CG.UI.Models"
+             xmlns:local="clr-namespace:CG.UI"
+            
+             xmlns:tabView="clr-namespace:Syncfusion.Maui.TabView;assembly=Syncfusion.Maui.TabView">
+    
+
+    <!--x:DataType="viewModel:CollegeCategoriesViewModel">-->
+    <Grid>
+
+        <tabView:SfTabView Grid.Row="2">
+            <tabView:SfTabView.Items>
+                <tabView:SfTabItem Header="Tab 1">
+                    <ScrollView>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <Label Text="Label1" TextColor="#77d065" FontSize="24" Grid.Row="0"/>
+                            <Label Text="Label1" TextColor="#77d065" FontSize="24" Grid.Row="1" />
+                            <Label Text="Label1" TextColor="#77d065" FontSize="24" Grid.Row="2" />
+                            <Label Text="Label1" TextColor="#77d065" FontSize="24" Grid.Row="3"/>
+                            <Label Text="Label1" TextColor="#77d065" FontSize="24" Grid.Row="4"/>
+                            <Label Text="Label1" TextColor="#77d065" FontSize="24" Grid.Row="5"/>
+                            <Label Text="Label1" TextColor="#77d065" FontSize="24" Grid.Row="6"/>
+
+                           
+                            <ScrollView Grid.Row="7" Margin="10" HeightRequest="100">
+                                <BlazorWebView   x:Name="blazorWebView" HostPage="wwwroot/index.html">
+                                    <BlazorWebView.RootComponents>
+                                        <RootComponent x:Name="rootComponent" Selector="#app" ComponentType="{x:Type view:CIllustration}" />
+                                    </BlazorWebView.RootComponents>
+                                </BlazorWebView>
+                            </ScrollView>
+
+
+                            <Label Text="Label1" TextColor="#77d065" FontSize="24" Grid.Row="8"/>
+                            <Label Text="Label1" TextColor="#77d065" FontSize="24" Grid.Row="9"/>
+                            <Label Text="Label1" TextColor="#77d065" FontSize="24" Grid.Row="10"/>
+                            <Label Text="Label1" TextColor="#77d065" FontSize="24" Grid.Row="11"/>
+                            <Label Text="Label1" TextColor="#77d065" FontSize="24" Grid.Row="12"/>
+                            <Label Text="Label1" TextColor="#77d065" FontSize="24" Grid.Row="13"/>
+                            <Label Text="Label1" TextColor="#77d065" FontSize="24" Grid.Row="14"/>
+
+                        </Grid>
+                    </ScrollView>
+                </tabView:SfTabItem>
+            </tabView:SfTabView.Items>
+        </tabView:SfTabView>
+       
+    </Grid>
+
+</ContentPage>

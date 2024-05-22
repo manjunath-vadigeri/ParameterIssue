@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CG.UI.Views.Breadcrumb"
+             xmlns:view="clr-namespace:CG.UI.Views"
+             x:DataType="view:Breadcrumb"
+             x:Name="this">
+
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BreadcrumbText" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="TextColor" Value="{StaticResource PrimaryTextColor}" />
+            </Style>
+
+            <Style x:Key="BreadcrumbSeparator" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="TextColor" Value="{StaticResource TertiaryTextColor}" />
+            </Style>
+        </ResourceDictionary>
+    </ContentView.Resources>
+
+    <HorizontalStackLayout Padding="10,5" Spacing="10" VerticalOptions="Start">
+        <view:CustomImageButton Source="{Binding IconSource, Source={x:Reference this}}" Clicked="OnIconSelected"  
+                                HeightRequest="30" WidthRequest="30"/>
+
+        <HorizontalStackLayout BindableLayout.ItemsSource="{Binding Items, Source={x:Reference this}}" Spacing="5"
+                               VerticalOptions="Center">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate x:DataType="x:String">
+                    <HorizontalStackLayout Spacing="5">
+                        <Label Text="{Binding .}" Style="{StaticResource BreadcrumbText}">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnBreadcrumbItemSelected"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+
+                        <view:CustomImage Source="breadcrumb_seperator.svg" HeightRequest="15"/>
+                    </HorizontalStackLayout>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </HorizontalStackLayout>
+    </HorizontalStackLayout>
+
+</ContentView>
